@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "1a345b69-b556-4097-bbd3-648badb244a8",
+		"name": "Cognitive Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sentiment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "7b8f698b5c784a669351e23cc7c5b9e7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"Hello world. This is some input text that I love.\"\r\n    },\r\n    {\r\n      \"language\": \"fr\",\r\n      \"id\": \"2\",\r\n      \"text\": \"Bonjour tout le monde\"\r\n    },\r\n    {\r\n      \"language\": \"es\",\r\n      \"id\": \"3\",\r\n      \"text\": \"La carretera estaba atascada. Había mucho tráfico el día de ayer.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"4\",\r\n      \"text\": \"I hate the terrible weather today! :(\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
+					"protocol": "https",
+					"host": [
+						"westeurope",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v2.1",
+						"sentiment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "7b8f698b5c784a669351e23cc7c5b9e7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\":\"https://i1.wp.com/www.sixteen-nine.net/wp-content/uploads/2017/01/rplate.jpg\"}"
+				},
+				"url": {
+					"raw": "https://westeurope.api.cognitive.microsoft.com/vision/v3.0/analyze?visualFeatures=Tags,Brands&language=en",
+					"protocol": "https",
+					"host": [
+						"westeurope",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"vision",
+						"v3.0",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "visualFeatures",
+							"value": "Tags,Brands"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "7b8f698b5c784a669351e23cc7c5b9e7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\":\"https://i1.wp.com/www.sixteen-nine.net/wp-content/uploads/2017/01/rplate.jpg\"}"
+				},
+				"url": {
+					"raw": "https://westeurope.api.cognitive.microsoft.com/vision/v3.0/read/analyze",
+					"protocol": "https",
+					"host": [
+						"westeurope",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"vision",
+						"v3.0",
+						"read",
+						"analyze"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Read Result Image",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "7b8f698b5c784a669351e23cc7c5b9e7",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://westeurope.api.cognitive.microsoft.com/vision/v3.0/read/analyzeResults/7a174575-1450-41c9-9f44-8aba88b4e407",
+					"protocol": "https",
+					"host": [
+						"westeurope",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"vision",
+						"v3.0",
+						"read",
+						"analyzeResults",
+						"7a174575-1450-41c9-9f44-8aba88b4e407"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Image: Celebrity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "7b8f698b5c784a669351e23cc7c5b9e7",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\":\"https://pyxis.nymag.com/v1/imgs/fd7/b0e/d23c368de349d978484d12ae1b78efd46e-21-michael-jackson-new.rsquare.w330.jpg\"}"
+				},
+				"url": {
+					"raw": "https://westeurope.api.cognitive.microsoft.com/vision/v3.0/analyze?visualFeatures=Tags,Description&language=en&details=Celebrities",
+					"protocol": "https",
+					"host": [
+						"westeurope",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"vision",
+						"v3.0",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "visualFeatures",
+							"value": "Tags,Description"
+						},
+						{
+							"key": "language",
+							"value": "en"
+						},
+						{
+							"key": "details",
+							"value": "Celebrities"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Azure search: search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "\n",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "1ABC382BA1E2DA6181A8FB6F237E2D39",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://adap-cz-aiinaday-search-pg.search.windows.net/indexes/clinical-trials-small/docs?api-version=2019-05-06&search=morquio&%24select=metadata_title%2Clocations&%24filter=locations%2Fany(location%3A%20location%20eq%20'Lamy')",
+					"protocol": "https",
+					"host": [
+						"adap-cz-aiinaday-search-pg",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"clinical-trials-small",
+						"docs"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "search",
+							"value": "morquio"
+						},
+						{
+							"key": "%24select",
+							"value": "metadata_title%2Clocations"
+						},
+						{
+							"key": "%24filter",
+							"value": "locations%2Fany(location%3A%20location%20eq%20'Lamy')"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Azure search: autosuggest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "\n",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "1ABC382BA1E2DA6181A8FB6F237E2D39",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"fuzzy\": true,\r\n   \"search\": \"health c\", \r\n   \"suggesterName\": \"sg\", \r\n   \"autocompleteMode\": \"twoTerms\"\r\n}"
+				},
+				"url": {
+					"raw": "https://adap-cz-aiinaday-search-pg.search.windows.net/indexes/clinical-trials-small/docs/autocomplete?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"adap-cz-aiinaday-search-pg",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"clinical-trials-small",
+						"docs",
+						"autocomplete"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
